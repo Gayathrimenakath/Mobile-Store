@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   {% load staticfiles %}
+   <title>{% block title %}Mobiles{% endblock %}</title>
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="{% static 'mobile/css/bootstrap.min.css' %}" >
+   <link rel="stylesheet" href="{% static 'mobile/css/style.css' %} " >
+   <script src="{% static 'mobile/js/bootstrap.min.js' %}"></script>
+   <script src="{% static 'mobile/js/jquery-3.0.0.min.js' %}"></script>
+</head>
+
+<body>
+<button class="btn btn-success">Hello</button>
+
+{% block body %}
+{% endblock %}
+</body>
+
+</html>

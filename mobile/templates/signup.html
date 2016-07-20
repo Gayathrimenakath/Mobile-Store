@@ -1,0 +1,75 @@
+
+{% load staticfiles %}
+{% block body %}
+
+<section id="banner" xmlns="http://www.w3.org/1999/html">
+
+
+<!-- Mixins-->
+<!-- Pen Title-->
+
+<div class="container" style="padding-bottom:2%">
+  <div class="card"></div>
+  <div class="card">
+    <h1 class="title">Login</h1>
+
+    <form action = "{% url 'login' %}" method = "post">
+      {% csrf_token %}
+      <div class="input-container">
+        <div class="form-group {% if form.email.errors %}has-error{% endif %}">
+          <input type="text" id="Username" required="required" name="username"/>
+          <label for="Username">User name</label>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="input-container">
+         <div class="form-group {% if form.password.errors %}has-error{% endif %}">
+          <input type="password" id="Password" required="required" name="password"/>
+          <label for="Password">Password</label>
+          <div class="bar"></div>
+         </div>
+      </div>
+      <div class="button-container">
+        <button><span>Go</span></button>
+      </div>
+
+
+
+ </form action= "{% url 'signup' %}" method="post">
+    {% csrf_token %}
+  </div>
+  <div class="card alt">
+    <div class="toggle"></div>
+    <h1 class="title">Register
+      <div class="close"></div>
+    </h1>
+    <form action="{% url 'signup' %}"  method="post">
+    {% csrf_token %}
+      <div class="input-container">
+        <input type="text" id="Username" required="required" name="username"/>
+        <label for="Username">User Name</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="email" id="Username" required="required" name="email"/>
+        <label for="Username">Email</label>
+        <div class="bar"></div>
+      </div>
+      <div class="input-container">
+        <input type="password" id="password" required="required" name="password"/>
+        <label for="Password">Password</label>
+        <div class="bar"></div>
+      </div>
+        <div class="button-container">
+        <button><span>Register</span></button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+</section>
+
+
+{% endblock body %}

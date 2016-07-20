@@ -1,0 +1,14 @@
+{% extends 'mobile/base.html' %}
+
+{% block body %}
+    {% for mobile in object_list %}
+        <ul>
+            <img src="{{ mobile.img.url }}"/>
+            <li>{{ mobile.model_name }}</li>
+            <li>{{ mobile.brand_name }}</li>
+            <li> Battery : {{ mobile.battery_capacity }} mah</li>
+            <li>Secondary camera : {{ mobile.front_cam }} MP</li>
+            <li>Primary camera : {{ mobile.back_cam }} MP</li>
+        </ul>
+    {% endfor %}
+{% endblock %}
