@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.views.generic import View, TemplateView
+from django.views.generic import View, TemplateView, DetailView
 from django.contrib.auth import authenticate, login
 from django.views.generic.list import ListView
 from .models import Mobile
@@ -52,4 +52,8 @@ class UserFormView(View):
 class HomePageView(TemplateView):
     template_name = 'index.html'
 
+
+class Detail(DetailView):
+    model = Mobile
+    template_name = 'mobile/mobiledetail.html'
 

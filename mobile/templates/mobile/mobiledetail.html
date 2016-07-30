@@ -1,0 +1,29 @@
+{% extends 'mobile/base.html' %}
+
+{% block body %}
+<div class = "row">
+
+    <div class = "container-fluid">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{ mobile.img.url }}"/>
+            </div>
+
+        </div>
+        <div class = "col-md-4">
+            <h3 class="text-center">
+                {{ mobile.model_name }}
+            </h3>
+             <h4>Brand: {{ mobile.brand_name }}</h4>
+             <h4>Price: {{ mobile.price  }}</h4>
+             <h4>Battery Capacity: {{ mobile.battery_capacity }}</h4>
+             <h4>Quantity: {{ mobile.quantity }}</h4>
+             <h4>Front cam: {{ mobile.front_cam }}</h4>
+             <h4>Back cam: {{ mobile.back_cam }}</h4>
+             <h4>Mobile: n{{ mobile.ram }}</h4>
+             <h4>Screen size: {{ mobile.screen_size }}</h4>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

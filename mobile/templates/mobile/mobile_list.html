@@ -1,14 +1,20 @@
 {% extends 'mobile/base.html' %}
 
 {% block body %}
+<div class = "row">
     {% for mobile in object_list %}
-        <ul>
-            <img src="{{ mobile.img.url }}"/>
-            <li>{{ mobile.model_name }}</li>
-            <li>{{ mobile.brand_name }}</li>
-            <li> Battery : {{ mobile.battery_capacity }} mah</li>
-            <li>Secondary camera : {{ mobile.front_cam }} MP</li>
-            <li>Primary camera : {{ mobile.back_cam }} MP</li>
-        </ul>
+    <div class = "container-fluid">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a href = "{% url 'detail' mobile.id %}">
+                    <img src="{{ mobile.img.url }}"/>
+                </a>
+            </div>
+            <h3 class="text-center">
+                {{ mobile.model_name }}
+            </h3>
+        </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock %}
