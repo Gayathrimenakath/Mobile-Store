@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from mobile.views import *
+from mobile.views import IndexView, UserFormView, HomePageView, Detail, AddMobileView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^login/', UserFormView.as_view(), name="login"),
     url(r'^home/', IndexView.as_view(), name='home'),
     url(r'^$', HomePageView.as_view(), name="index"),
-    url(r'^(?P<pk>[0-9]+)/$', Detail.as_view(), name ='detail')
+    url(r'^(?P<pk>[0-9]+)/$', Detail.as_view(), name='detail'),
+    url(r'^mobile/add/$', AddMobileView.as_view(), name='add_mobile')
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

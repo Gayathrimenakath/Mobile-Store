@@ -1,5 +1,5 @@
+from audioop import reverse
 from django.db import models
-from django.core.urlresolvers import reverse
 # Create your models here.
 
 
@@ -22,8 +22,11 @@ class Mobile(models.Model):
     # Date is set manually
     release_data = models.DateTimeField(auto_now=False, auto_now_add=False)
 
-    # images are uploaded into /media/mobiles/
+    # images are uploaded into /media/mobile/
     img = models.ImageField()
+
+    def get_absolute_url(self):
+        return reverse('mobile_detail', keywargs={'pk': self.pk})
 
 
 
