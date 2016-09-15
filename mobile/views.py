@@ -64,6 +64,6 @@ class AddMobileView(CreateView):
     template_name = 'mobile/mobile_form.html'
     success_url = '/home/'
 
-    
+
 
 
